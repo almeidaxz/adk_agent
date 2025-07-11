@@ -94,7 +94,7 @@ def drop_null_columns(table_path: str) -> str:
     df.drop(columns=nulls_list, inplace=True)
     schema_after = str(df.dtypes)
 
-    # df.to_csv(table_path)
+    df.to_csv(table_path)
     return "\n".join([str(schema_before), str(schema_after)])
   except Exception as e:
     logging.error(f"Falha ao tentar remover as colunas nulas: {e}")
@@ -139,7 +139,7 @@ def fill_null(table_path: str, column_name: str, fill_value: str) -> str:
     df[column_name].fillna(fill_value, inplace=True)
     rows_after = df[df['id'].isin(id_list)][['id', column_name]]
 
-    # df.to_csv(table_path)
+    df.to_csv(table_path)
     return "\n".join([str(rows_before), str(rows_after)])
   except Exception as e:
     logging.error(f"Falha ao tentar preencher campos nulos: {e}")
@@ -163,7 +163,7 @@ def remove_symbols(table_path: str, column_name: str) -> str:
     df[column_name] = df[column_name].str.replace(r"[^0-9.,]+", "", regex=True)
     rows_after = df[df['id'].isin(id_list)][['id', column_name]]
 
-    # df.to_csv(table_path)
+    df.to_csv(table_path)
     return "\n".join([str(rows_before), str(rows_after)])
   except Exception as e:
     logging.error(f"Falha ao tentar transformar dados: {e}")
