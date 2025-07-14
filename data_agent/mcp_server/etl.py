@@ -182,7 +182,7 @@ ADK_ETL_TOOLS = {
 
 @app.list_tools()
 async def list_mcp_tools() -> list[mcp_types.Tool]:
-  """MCP handler to list tools this server exposes."""
+  """MCP handler que lista as tools que este server expõe."""
   logging.info("MCP Server: Iniciou a listagem de tools.")
   mcp_tools_list = []
   for tool_name, adk_tool_instance in ADK_ETL_TOOLS.items():
@@ -195,7 +195,7 @@ async def list_mcp_tools() -> list[mcp_types.Tool]:
 
 @app.call_tool()
 async def call_mcp_tool(name: str, arguments: dict) -> list[mcp_types.TextContent]:
-  """MCP handler to execute a tool call requested by an MCP client."""
+  """MCP handler para executar a chamada da tool solicitada pelo MCP client."""
   logging.info(f"MCP Server: Iniciou a chamada da tool {name} com os args: {arguments}")
 
   if name in ADK_ETL_TOOLS:

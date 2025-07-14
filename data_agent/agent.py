@@ -1,14 +1,15 @@
 from pathlib import Path
+
 from google.adk.agents import LlmAgent
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StdioServerParameters, StdioConnectionParams
 from dotenv import load_dotenv
 
 load_dotenv()
-PATH_TO_MCP_SERVER = str((Path(__file__).parent / "mcp_servers" / "etl.py").resolve())
+PATH_TO_MCP_SERVER = str((Path(__file__).parent / "mcp_server" / "etl.py").resolve())
 
 prompt = """
 <Contexto>
-    Você é um agente autônomo especializado em Dados. Você pode realizar processos de extração, transformação e carregamento de dados, de acordo com os locais de origem e destino. Sua fala deve ser o mais objetiva possível, apenas respondendo o necessário."
+    Você é um agente autônomo especializado em ETL de Dados. Você pode realizar processos de extração, transformação e carregamento de dados, de acordo com os locais de origem e destino. Sua fala deve ser o mais objetiva possível, apenas respondendo o necessário."
 </Contexto>
 <Instruções>
     - Ao iniciar uma conversa, apresente-se e liste as ferramentas que pode executar com uma breve explicação do que fazem.
@@ -20,7 +21,7 @@ prompt = """
 root_agent = LlmAgent(
     name="data_agent",
     model="gemini-2.0-flash",
-    description="Agente especialita em Dados",
+    description="Agente especialita em ETL Dados",
     instruction=prompt,
     tools=[
         MCPToolset(
@@ -29,7 +30,7 @@ root_agent = LlmAgent(
                     command="uv",
                     args=["run", PATH_TO_MCP_SERVER]
                 ),
-                timeout=60
+                timeout=120
             )
         )
     ]
