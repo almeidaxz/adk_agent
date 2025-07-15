@@ -13,6 +13,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "google-adk" },
     { name = "google-cloud-bigquery" },
+    { name = "google-cloud-documentai" },
     { name = "google-cloud-storage" },
     { name = "langchain" },
     { name = "langchain-google-genai" },
@@ -25,6 +26,7 @@ dependencies = [
 requires-dist = [
     { name = "google-adk", specifier = ">=1.5.0" },
     { name = "google-cloud-bigquery", specifier = ">=3.34.0" },
+    { name = "google-cloud-documentai", specifier = ">=3.5.0" },
     { name = "google-cloud-storage", specifier = ">=2.19.0" },
     { name = "langchain", specifier = ">=0.3.26" },
     { name = "langchain-google-genai", specifier = ">=2.1.7" },
@@ -470,6 +472,21 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/d6/b8/2b53838d2acd6ec6168fd284a990c76695e84c65deee79c9f3a4276f6b4f/google_cloud_core-2.4.3.tar.gz", hash = "sha256:1fab62d7102844b278fe6dead3af32408b1df3eb06f5c7e8634cbd40edc4da53", size = 35861, upload-time = "2025-03-10T21:05:38.948Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/40/86/bda7241a8da2d28a754aad2ba0f6776e35b67e37c36ae0c45d49370f1014/google_cloud_core-2.4.3-py2.py3-none-any.whl", hash = "sha256:5130f9f4c14b4fafdff75c79448f9495cfade0d8775facf1b09c3bf67e027f6e", size = 29348, upload-time = "2025-03-10T21:05:37.785Z" },
+]
+
+[[package]]
+name = "google-cloud-documentai"
+version = "3.5.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/64/72/59d37d5449bff9bf64b66c51064f356e5c31975ef705e8838fa168d68eac/google_cloud_documentai-3.5.0.tar.gz", hash = "sha256:e469689850bee8ae6c656b172132954b6575ca226981f3374027ce45414deeb0", size = 347919, upload-time = "2025-04-29T15:45:50.36Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f1/e5/e9021271b8690a7451a8f942889c0a9314c68d7e55fa350bb647c5de3ecd/google_cloud_documentai-3.5.0-py3-none-any.whl", hash = "sha256:6d4659309ce468d72ef275449c254d6d6cc753a7151b0d239f698c9323aca3eb", size = 299074, upload-time = "2025-04-29T15:45:48.78Z" },
 ]
 
 [[package]]
