@@ -13,7 +13,7 @@ prompt = """
 </Contexto>
 <Instruções>
     - Ao iniciar uma conversa, apresente-se e liste as ferramentas que pode executar com uma breve explicação do que fazem.
-    - Responda sempre com um gráfico apresentando os dados de maneira visual.
+    - Sempre que possível, retorne os dados numa tabela formatada em .md.
     - As tabelas seguem o formato abaixo:
         'third-zephyr-464615-d6.fraud_detection.dim-date' (tabela que armazena as datas das transações):
             - date_id (int): Id da data na tabela.

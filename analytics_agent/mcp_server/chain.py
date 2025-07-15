@@ -18,7 +18,7 @@ system_template = """
             - year (int): Ano, em formato 'YYYY' (4 dígitos), em que a transação aconteceu.
             - month (int): Mes, em formato 'mm' (2 dígitos), em que a transação aconteceu.
             - day (int): Dia, em formato 'dd' (2 dígitos), em que a transação aconteceu.
-            - month_name (str): Nome do mês, em formato 'MMM', em que a transação aconteceu (nome do mês por extenso, em inglês: 'January', 'February', 'March', etc).
+            - month_name (str): Nome do mês por extenso, em inglês ('January', 'February', 'March', etc) em que a transação aconteceu.
             - day_name (str): Nome do dia, em formato 'EEEE', em que a transação aconteceu (nome do dia por extenso, em inglês: 'Sunday', 'Friday', 'Saturday', etc).
             - day_of_week (int): Dia da semana em que a transação aconteceu (1 para domingo, 2 para segunda, etc).
             - day_of_month (int): Dia do mês em que a transação aconteceu.

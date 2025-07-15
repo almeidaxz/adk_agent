@@ -92,7 +92,7 @@ async def list_mcp_tools() -> list[mcp_types.Tool]:
     return mcp_tools_list
 
 @app.call_tool()
-async def call_mcp_tool(name: str, arguments: dict) -> list[mcp_types.TextContent, mcp_types.ImageContent]:
+async def call_mcp_tool(name: str, arguments: dict) -> list[mcp_types.TextContent]:
     """MCP handler para executar a chamada da tool solicitada pelo MCP client."""
     logging.info(f"MCP Server: Iniciou a chamada da tool {name} com os args: {arguments}")
 
