@@ -5,10 +5,9 @@ from google.cloud import documentai
 from google.cloud import storage
 from google.api_core.client_options import ClientOptions
 
-# project_id = os.getenv("PROJECT_ID")
-project_id = "third-zephyr-464615-d6"
-location = "us"
-processor_id = "5be5eb7447f1e852"
+project_id = os.getenv("PROJECT_ID")
+location = os.getenv("LOCATION")
+processor_id = os.getenv("PROCESSOR_ID")
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = str((Path(__file__).parent / "credentials" / "credentials.json").resolve())
 
 gcs_client = storage.Client()
@@ -17,7 +16,7 @@ def process_documents(contract_name: str):
     opts = ClientOptions(api_endpoint="us-documentai.googleapis.com")
     client = documentai.DocumentProcessorServiceClient(client_options=opts)
 
-    gcs_input_uri = f"gs://signed_contracts_adk/signed_contracts/{contract_name}"
+    gcs_input_uri = f"signed_contracts_adk/signed_contracts/{contract_name}"
     gcs_document = documentai.GcsDocument(
         gcs_uri=gcs_input_uri, mime_type='application/pdf'
     )
